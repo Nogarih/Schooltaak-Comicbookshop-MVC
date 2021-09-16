@@ -1,0 +1,46 @@
+﻿@*<div class="flex-container">
+        @foreach (var product in Model)
+        {
+            <div class="item">
+                <p>@product.ProductName</p>
+                <img id="image" src="~/images/@product.Image" alt="Alternate Text" />
+                <p>Category: @product.Category </p>
+                <a asp-action="details" asp-controller="home" asp-route-id="@product.Id">View details</a>
+            </div>
+        }
+    </div>*@
+<head>
+    <link href="~/css/Style.css" rel="stylesheet" />
+</head>
+
+<div class="flex-container">
+    @foreach (var product in Model)
+    {
+        <div class="row item">
+            <div class="col-md-3 col-sm-6 item">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#" class="image">
+                            <img class="pic-1" src="~/images/@product.Image">
+                        </a>
+                        <ul class="product-links">
+                            <li><a asp-action="details" asp-controller="home" asp-route-id="@product.Id"><i class="fa fa-shopping-bag"></i> View Details</a></li>
+                            <li><a href="#"><i class="fa fa-search"></i> Add to cart</a></li>
+                            <li><a asp-controller="products" asp-action="edit" asp-route-id="@product.Id"><i class="fa fa-shopping-bag"></i>Edit</a></li>
+                            <li><a asp-controller="products" asp-action="delete" asp-route-id="@product.Id"><i class="fa fa-shopping-bag"></i>Delete</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="product-content">
+                        <div class="title">
+                        @product.ProductName
+                            <p class="category">@product.Category</p>
+                        </div>
+                        <div class="price">@product.Price.ToString("c")</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

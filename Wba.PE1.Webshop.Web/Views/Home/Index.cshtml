@@ -1,0 +1,10 @@
+﻿@model HomeIndexVM
+@{
+    ViewData["Title"] = "Home";
+}
+<header>
+    <h2 class="page-title">@ViewBag.Title</h2>
+</header>
+<a class="button" style="vertical-align:middle" asp-controller="Products" asp-action="Create"><span>Create new product</span></a>
+
+<partial name="ProductListPartial" model="@Model.Products" />

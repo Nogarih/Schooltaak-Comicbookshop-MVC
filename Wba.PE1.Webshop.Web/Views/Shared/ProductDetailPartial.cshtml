@@ -1,0 +1,47 @@
+﻿@model HomeDetailsVM
+
+<h2 class="page-title">Product details</h2>
+<div class="flex-container">
+    <div class="row item">
+        <div class="col-md-3 col-sm-6 item">
+            <div class="product-grid">
+                <div class="product-image">
+                    <a href="#" class="image">
+                        <img class="pic-1" src="~/images/@Model.Image">
+                    </a>
+                    <ul class="product-links">
+                        <li><a href="#"><i class="fa fa-search"></i> Add to cart</a></li>
+                    </ul>
+                </div>
+                <div class="product-content">
+                    <div class="title">
+                        @Model.ProductName
+
+                        <div class="category allign-left-text">
+                            <p class="category">Category: @Model.Category</p>
+                            <p class="category">Publisher: @Model.Publisher</p>
+                            <p class="category">Serie: @Model.Serie</p>
+                            <ul class="list-info">
+                                @if (Model.Info != null)
+                                {
+                                    @foreach (var item in Model.Info)
+                                    {
+                                        <li class="category"> @item.Info.InfoText</li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="price">@Model.Price.ToString("c")</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a class="button" style="vertical-align:middle" href="javascript: history.go(-1)"><span>Go back</span></a>
+
+
+
+

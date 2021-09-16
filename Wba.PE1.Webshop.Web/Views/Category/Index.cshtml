@@ -1,0 +1,19 @@
+﻿@model CategoryIndexVM
+
+<div>
+    <h2 class="page-title">@ViewBag.Title</h2>
+    <div>
+        <a class="button" style="vertical-align:middle" asp-controller="Categories" asp-action="Create"><span>Create new category</span></a>
+
+    </div>
+    @foreach (var category in Model.Categories)
+    {
+        <div class="buttons">
+            <a class="item" asp-action="details" asp-controller="category" asp-route-id="@category.Id" asp-route-name="@category.CategoryName">
+                <p><span class="bg"></span><span class="base"></span><span class="text">@category.CategoryName</span></p>
+                <a asp-controller="categories" asp-action="delete" asp-route-id="@category.Id"><i class="fa fa-shopping-bag"></i>Delete</a>
+
+            </a>
+        </div>
+    }
+</div>

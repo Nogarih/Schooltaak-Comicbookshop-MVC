@@ -1,0 +1,6 @@
+﻿@model HomeIndexVM
+
+<h2 class="page-title">@ViewBag.Title</h2>
+
+<partial name="ProductListPartial" model="@Model.Products" />
+<a class="button" style="vertical-align:middle" href="javascript: history.go(-1)"><span>Go back</span></a>
